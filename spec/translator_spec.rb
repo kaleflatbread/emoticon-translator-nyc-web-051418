@@ -23,7 +23,7 @@ describe "#load_library" do
 
     it "the keys inside the 'get_meaning' hash are the Japanese emoticons" do
       emoticons = ["☜(⌒▽⌒)☞", "(ΘεΘ;)", "(￣ー￣)", "o_O", "(^_-)"]
-      emoticons.each do |japanese_emoticon| 
+      emoticons.each do |japanese_emoticon|
         expect(result['get_meaning'].keys).to include(japanese_emoticon)
       end
     end
@@ -35,21 +35,21 @@ describe "#load_library" do
         "o_O" => "surprised",
         "(^_-)" => "wink"
       }
-      emoticons.each do |japanese_emoticon,meaning| 
+      emoticons.each do |japanese_emoticon,meaning|
         expect(result['get_meaning'][japanese_emoticon]).to eq(meaning)
       end
     end
 
     it "the keys inside the 'get_emoticon' hash are the English emoticons" do
       emoticons = ["O:)", ":'(", ";)", ":$"]
-      emoticons.each do |english_emoticon| 
+      emoticons.each do |english_emoticon|
         expect(result['get_emoticon'].keys).to include(english_emoticon)
       end
     end
 
     it "the emoticon keys inside the 'get_emoticon' hash point to their Japanese equivalents" do
       emoticons = {"O:)" => "☜(⌒▽⌒)☞", ":'(" => "(Ｔ▽Ｔ)", ";)" => "(^_-)"}
-      emoticons.each do |english_emoticon,japanese_emoticon| 
+      emoticons.each do |english_emoticon,japanese_emoticon|
         expect(result['get_emoticon'][english_emoticon]).to eq(japanese_emoticon)
       end
     end
